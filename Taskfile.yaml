@@ -1,0 +1,8 @@
+version: 3
+
+tasks:
+  build_runner:
+    aliases:
+      - br
+    desc: Starts build_runner in watch mode
+    cmd: dart run build_runner watch --delete-conflicting-outputs
