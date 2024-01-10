@@ -15,6 +15,9 @@ dependencies:
   retrofit: 4.0.3
   json_annotation: 4.8.1
   freezed_annotation: 2.4.1
+  logging: 1.2.0
+  get_it: 7.6.6
+  injectable: 2.3.2
 
 dev_dependencies:
   flutter_test:
@@ -24,6 +27,7 @@ dev_dependencies:
   retrofit_generator: 8.0.6
   json_serializable: 6.7.1
   freezed: 2.4.6
+  injectable_generator: 2.4.1
 
 flutter:
   uses-material-design: true
