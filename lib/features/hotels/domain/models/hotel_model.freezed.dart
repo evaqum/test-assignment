@@ -23,7 +23,7 @@ mixin _$HotelModel {
   String get ratingString => throw _privateConstructorUsedError;
   double get minimalPrice => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
-  List<String>? get additionalInfo => throw _privateConstructorUsedError;
+  List<String>? get features => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $HotelModelCopyWith<HotelModel> get copyWith =>
@@ -44,7 +44,7 @@ abstract class $HotelModelCopyWith<$Res> {
       String ratingString,
       double minimalPrice,
       String description,
-      List<String>? additionalInfo});
+      List<String>? features});
 }
 
 /// @nodoc
@@ -67,7 +67,7 @@ class _$HotelModelCopyWithImpl<$Res, $Val extends HotelModel>
     Object? ratingString = null,
     Object? minimalPrice = null,
     Object? description = null,
-    Object? additionalInfo = freezed,
+    Object? features = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -98,9 +98,9 @@ class _$HotelModelCopyWithImpl<$Res, $Val extends HotelModel>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
-      additionalInfo: freezed == additionalInfo
-          ? _value.additionalInfo
-          : additionalInfo // ignore: cast_nullable_to_non_nullable
+      features: freezed == features
+          ? _value.features
+          : features // ignore: cast_nullable_to_non_nullable
               as List<String>?,
     ) as $Val);
   }
@@ -122,7 +122,7 @@ abstract class _$$HotelModelImplCopyWith<$Res>
       String ratingString,
       double minimalPrice,
       String description,
-      List<String>? additionalInfo});
+      List<String>? features});
 }
 
 /// @nodoc
@@ -143,7 +143,7 @@ class __$$HotelModelImplCopyWithImpl<$Res>
     Object? ratingString = null,
     Object? minimalPrice = null,
     Object? description = null,
-    Object? additionalInfo = freezed,
+    Object? features = freezed,
   }) {
     return _then(_$HotelModelImpl(
       id: null == id
@@ -174,9 +174,9 @@ class __$$HotelModelImplCopyWithImpl<$Res>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
-      additionalInfo: freezed == additionalInfo
-          ? _value._additionalInfo
-          : additionalInfo // ignore: cast_nullable_to_non_nullable
+      features: freezed == features
+          ? _value._features
+          : features // ignore: cast_nullable_to_non_nullable
               as List<String>?,
     ));
   }
@@ -193,9 +193,9 @@ class _$HotelModelImpl implements _HotelModel {
       required this.ratingString,
       required this.minimalPrice,
       required this.description,
-      final List<String>? additionalInfo})
+      final List<String>? features})
       : _imageUrls = imageUrls,
-        _additionalInfo = additionalInfo;
+        _features = features;
 
   @override
   final String id;
@@ -217,19 +217,19 @@ class _$HotelModelImpl implements _HotelModel {
   final double minimalPrice;
   @override
   final String description;
-  final List<String>? _additionalInfo;
+  final List<String>? _features;
   @override
-  List<String>? get additionalInfo {
-    final value = _additionalInfo;
+  List<String>? get features {
+    final value = _features;
     if (value == null) return null;
-    if (_additionalInfo is EqualUnmodifiableListView) return _additionalInfo;
+    if (_features is EqualUnmodifiableListView) return _features;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
 
   @override
   String toString() {
-    return 'HotelModel(id: $id, name: $name, address: $address, imageUrls: $imageUrls, ratingString: $ratingString, minimalPrice: $minimalPrice, description: $description, additionalInfo: $additionalInfo)';
+    return 'HotelModel(id: $id, name: $name, address: $address, imageUrls: $imageUrls, ratingString: $ratingString, minimalPrice: $minimalPrice, description: $description, features: $features)';
   }
 
   @override
@@ -248,8 +248,7 @@ class _$HotelModelImpl implements _HotelModel {
                 other.minimalPrice == minimalPrice) &&
             (identical(other.description, description) ||
                 other.description == description) &&
-            const DeepCollectionEquality()
-                .equals(other._additionalInfo, _additionalInfo));
+            const DeepCollectionEquality().equals(other._features, _features));
   }
 
   @override
@@ -262,7 +261,7 @@ class _$HotelModelImpl implements _HotelModel {
       ratingString,
       minimalPrice,
       description,
-      const DeepCollectionEquality().hash(_additionalInfo));
+      const DeepCollectionEquality().hash(_features));
 
   @JsonKey(ignore: true)
   @override
@@ -280,7 +279,7 @@ abstract class _HotelModel implements HotelModel {
       required final String ratingString,
       required final double minimalPrice,
       required final String description,
-      final List<String>? additionalInfo}) = _$HotelModelImpl;
+      final List<String>? features}) = _$HotelModelImpl;
 
   @override
   String get id;
@@ -297,7 +296,7 @@ abstract class _HotelModel implements HotelModel {
   @override
   String get description;
   @override
-  List<String>? get additionalInfo;
+  List<String>? get features;
   @override
   @JsonKey(ignore: true)
   _$$HotelModelImplCopyWith<_$HotelModelImpl> get copyWith =>

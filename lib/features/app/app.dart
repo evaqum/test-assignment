@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
 
+import 'theme.dart';
+
 class HotelApp extends StatelessWidget {
-  const HotelApp({super.key});
+  final RouterConfig<Object> router;
+
+  const HotelApp({
+    super.key,
+    required this.router,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Placeholder(),
-      ),
+    return MaterialApp.router(
+      routerConfig: router,
+      theme: HotelAppTheme.theme,
     );
   }
 }

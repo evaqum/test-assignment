@@ -13,7 +13,7 @@ class HotelScreenBloc extends Bloc<HotelScreenEvent, HotelScreenState> {
 
   HotelScreenBloc({
     required this.hotelsRepository,
-  }) : super(const HotelScreenState.initial()) {
+  }) : super(const HotelScreenState.loading()) {
     on(_handleHotelFetchRequested);
   }
 

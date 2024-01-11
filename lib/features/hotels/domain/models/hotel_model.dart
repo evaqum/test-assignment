@@ -12,6 +12,6 @@ class HotelModel with _$HotelModel {
     required String ratingString,
     required double minimalPrice,
     required String description,
-    List<String>? additionalInfo,
+    List<String>? features,
   }) = _HotelModel;
 }

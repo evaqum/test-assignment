@@ -169,21 +169,21 @@ abstract class _HotelFetchRequested implements HotelScreenEvent {
 mixin _$HotelScreenState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
+    required TResult Function() loading,
     required TResult Function(HotelModel hotel) hotelFetched,
     required TResult Function() hotelFetchFailed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
+    TResult? Function()? loading,
     TResult? Function(HotelModel hotel)? hotelFetched,
     TResult? Function()? hotelFetchFailed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
+    TResult Function()? loading,
     TResult Function(HotelModel hotel)? hotelFetched,
     TResult Function()? hotelFetchFailed,
     required TResult orElse(),
@@ -191,23 +191,24 @@ mixin _$HotelScreenState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_HotelFetched value) hotelFetched,
-    required TResult Function(_HotelFetchFailed value) hotelFetchFailed,
+    required TResult Function(HotelScreenStateLoading value) loading,
+    required TResult Function(HotelScreenStateFetched value) hotelFetched,
+    required TResult Function(HotelScreenStateFetchFailed value)
+        hotelFetchFailed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_HotelFetched value)? hotelFetched,
-    TResult? Function(_HotelFetchFailed value)? hotelFetchFailed,
+    TResult? Function(HotelScreenStateLoading value)? loading,
+    TResult? Function(HotelScreenStateFetched value)? hotelFetched,
+    TResult? Function(HotelScreenStateFetchFailed value)? hotelFetchFailed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_HotelFetched value)? hotelFetched,
-    TResult Function(_HotelFetchFailed value)? hotelFetchFailed,
+    TResult Function(HotelScreenStateLoading value)? loading,
+    TResult Function(HotelScreenStateFetched value)? hotelFetched,
+    TResult Function(HotelScreenStateFetchFailed value)? hotelFetchFailed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -232,35 +233,38 @@ class _$HotelScreenStateCopyWithImpl<$Res, $Val extends HotelScreenState>
 }
 
 /// @nodoc
-abstract class _$$InitialImplCopyWith<$Res> {
-  factory _$$InitialImplCopyWith(
-          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
-      __$$InitialImplCopyWithImpl<$Res>;
+abstract class _$$HotelScreenStateLoadingImplCopyWith<$Res> {
+  factory _$$HotelScreenStateLoadingImplCopyWith(
+          _$HotelScreenStateLoadingImpl value,
+          $Res Function(_$HotelScreenStateLoadingImpl) then) =
+      __$$HotelScreenStateLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$InitialImplCopyWithImpl<$Res>
-    extends _$HotelScreenStateCopyWithImpl<$Res, _$InitialImpl>
-    implements _$$InitialImplCopyWith<$Res> {
-  __$$InitialImplCopyWithImpl(
-      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
+class __$$HotelScreenStateLoadingImplCopyWithImpl<$Res>
+    extends _$HotelScreenStateCopyWithImpl<$Res, _$HotelScreenStateLoadingImpl>
+    implements _$$HotelScreenStateLoadingImplCopyWith<$Res> {
+  __$$HotelScreenStateLoadingImplCopyWithImpl(
+      _$HotelScreenStateLoadingImpl _value,
+      $Res Function(_$HotelScreenStateLoadingImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$InitialImpl implements _Initial {
-  const _$InitialImpl();
+class _$HotelScreenStateLoadingImpl implements HotelScreenStateLoading {
+  const _$HotelScreenStateLoadingImpl();
 
   @override
   String toString() {
-    return 'HotelScreenState.initial()';
+    return 'HotelScreenState.loading()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InitialImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$HotelScreenStateLoadingImpl);
   }
 
   @override
@@ -269,33 +273,33 @@ class _$InitialImpl implements _Initial {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
+    required TResult Function() loading,
     required TResult Function(HotelModel hotel) hotelFetched,
     required TResult Function() hotelFetchFailed,
   }) {
-    return initial();
+    return loading();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
+    TResult? Function()? loading,
     TResult? Function(HotelModel hotel)? hotelFetched,
     TResult? Function()? hotelFetchFailed,
   }) {
-    return initial?.call();
+    return loading?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
+    TResult Function()? loading,
     TResult Function(HotelModel hotel)? hotelFetched,
     TResult Function()? hotelFetchFailed,
     required TResult orElse(),
   }) {
-    if (initial != null) {
-      return initial();
+    if (loading != null) {
+      return loading();
     }
     return orElse();
   }
@@ -303,47 +307,49 @@ class _$InitialImpl implements _Initial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_HotelFetched value) hotelFetched,
-    required TResult Function(_HotelFetchFailed value) hotelFetchFailed,
+    required TResult Function(HotelScreenStateLoading value) loading,
+    required TResult Function(HotelScreenStateFetched value) hotelFetched,
+    required TResult Function(HotelScreenStateFetchFailed value)
+        hotelFetchFailed,
   }) {
-    return initial(this);
+    return loading(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_HotelFetched value)? hotelFetched,
-    TResult? Function(_HotelFetchFailed value)? hotelFetchFailed,
+    TResult? Function(HotelScreenStateLoading value)? loading,
+    TResult? Function(HotelScreenStateFetched value)? hotelFetched,
+    TResult? Function(HotelScreenStateFetchFailed value)? hotelFetchFailed,
   }) {
-    return initial?.call(this);
+    return loading?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_HotelFetched value)? hotelFetched,
-    TResult Function(_HotelFetchFailed value)? hotelFetchFailed,
+    TResult Function(HotelScreenStateLoading value)? loading,
+    TResult Function(HotelScreenStateFetched value)? hotelFetched,
+    TResult Function(HotelScreenStateFetchFailed value)? hotelFetchFailed,
     required TResult orElse(),
   }) {
-    if (initial != null) {
-      return initial(this);
+    if (loading != null) {
+      return loading(this);
     }
     return orElse();
   }
 }
 
-abstract class _Initial implements HotelScreenState {
-  const factory _Initial() = _$InitialImpl;
+abstract class HotelScreenStateLoading implements HotelScreenState {
+  const factory HotelScreenStateLoading() = _$HotelScreenStateLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$HotelFetchedImplCopyWith<$Res> {
-  factory _$$HotelFetchedImplCopyWith(
-          _$HotelFetchedImpl value, $Res Function(_$HotelFetchedImpl) then) =
-      __$$HotelFetchedImplCopyWithImpl<$Res>;
+abstract class _$$HotelScreenStateFetchedImplCopyWith<$Res> {
+  factory _$$HotelScreenStateFetchedImplCopyWith(
+          _$HotelScreenStateFetchedImpl value,
+          $Res Function(_$HotelScreenStateFetchedImpl) then) =
+      __$$HotelScreenStateFetchedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({HotelModel hotel});
 
@@ -351,11 +357,12 @@ abstract class _$$HotelFetchedImplCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$HotelFetchedImplCopyWithImpl<$Res>
-    extends _$HotelScreenStateCopyWithImpl<$Res, _$HotelFetchedImpl>
-    implements _$$HotelFetchedImplCopyWith<$Res> {
-  __$$HotelFetchedImplCopyWithImpl(
-      _$HotelFetchedImpl _value, $Res Function(_$HotelFetchedImpl) _then)
+class __$$HotelScreenStateFetchedImplCopyWithImpl<$Res>
+    extends _$HotelScreenStateCopyWithImpl<$Res, _$HotelScreenStateFetchedImpl>
+    implements _$$HotelScreenStateFetchedImplCopyWith<$Res> {
+  __$$HotelScreenStateFetchedImplCopyWithImpl(
+      _$HotelScreenStateFetchedImpl _value,
+      $Res Function(_$HotelScreenStateFetchedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -363,7 +370,7 @@ class __$$HotelFetchedImplCopyWithImpl<$Res>
   $Res call({
     Object? hotel = null,
   }) {
-    return _then(_$HotelFetchedImpl(
+    return _then(_$HotelScreenStateFetchedImpl(
       hotel: null == hotel
           ? _value.hotel
           : hotel // ignore: cast_nullable_to_non_nullable
@@ -382,8 +389,8 @@ class __$$HotelFetchedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$HotelFetchedImpl implements _HotelFetched {
-  const _$HotelFetchedImpl({required this.hotel});
+class _$HotelScreenStateFetchedImpl implements HotelScreenStateFetched {
+  const _$HotelScreenStateFetchedImpl({required this.hotel});
 
   @override
   final HotelModel hotel;
@@ -397,7 +404,7 @@ class _$HotelFetchedImpl implements _HotelFetched {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$HotelFetchedImpl &&
+            other is _$HotelScreenStateFetchedImpl &&
             (identical(other.hotel, hotel) || other.hotel == hotel));
   }
 
@@ -407,13 +414,14 @@ class _$HotelFetchedImpl implements _HotelFetched {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$HotelFetchedImplCopyWith<_$HotelFetchedImpl> get copyWith =>
-      __$$HotelFetchedImplCopyWithImpl<_$HotelFetchedImpl>(this, _$identity);
+  _$$HotelScreenStateFetchedImplCopyWith<_$HotelScreenStateFetchedImpl>
+      get copyWith => __$$HotelScreenStateFetchedImplCopyWithImpl<
+          _$HotelScreenStateFetchedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
+    required TResult Function() loading,
     required TResult Function(HotelModel hotel) hotelFetched,
     required TResult Function() hotelFetchFailed,
   }) {
@@ -423,7 +431,7 @@ class _$HotelFetchedImpl implements _HotelFetched {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
+    TResult? Function()? loading,
     TResult? Function(HotelModel hotel)? hotelFetched,
     TResult? Function()? hotelFetchFailed,
   }) {
@@ -433,7 +441,7 @@ class _$HotelFetchedImpl implements _HotelFetched {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
+    TResult Function()? loading,
     TResult Function(HotelModel hotel)? hotelFetched,
     TResult Function()? hotelFetchFailed,
     required TResult orElse(),
@@ -447,9 +455,10 @@ class _$HotelFetchedImpl implements _HotelFetched {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_HotelFetched value) hotelFetched,
-    required TResult Function(_HotelFetchFailed value) hotelFetchFailed,
+    required TResult Function(HotelScreenStateLoading value) loading,
+    required TResult Function(HotelScreenStateFetched value) hotelFetched,
+    required TResult Function(HotelScreenStateFetchFailed value)
+        hotelFetchFailed,
   }) {
     return hotelFetched(this);
   }
@@ -457,9 +466,9 @@ class _$HotelFetchedImpl implements _HotelFetched {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_HotelFetched value)? hotelFetched,
-    TResult? Function(_HotelFetchFailed value)? hotelFetchFailed,
+    TResult? Function(HotelScreenStateLoading value)? loading,
+    TResult? Function(HotelScreenStateFetched value)? hotelFetched,
+    TResult? Function(HotelScreenStateFetchFailed value)? hotelFetchFailed,
   }) {
     return hotelFetched?.call(this);
   }
@@ -467,9 +476,9 @@ class _$HotelFetchedImpl implements _HotelFetched {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_HotelFetched value)? hotelFetched,
-    TResult Function(_HotelFetchFailed value)? hotelFetchFailed,
+    TResult Function(HotelScreenStateLoading value)? loading,
+    TResult Function(HotelScreenStateFetched value)? hotelFetched,
+    TResult Function(HotelScreenStateFetchFailed value)? hotelFetchFailed,
     required TResult orElse(),
   }) {
     if (hotelFetched != null) {
@@ -479,36 +488,39 @@ class _$HotelFetchedImpl implements _HotelFetched {
   }
 }
 
-abstract class _HotelFetched implements HotelScreenState {
-  const factory _HotelFetched({required final HotelModel hotel}) =
-      _$HotelFetchedImpl;
+abstract class HotelScreenStateFetched implements HotelScreenState {
+  const factory HotelScreenStateFetched({required final HotelModel hotel}) =
+      _$HotelScreenStateFetchedImpl;
 
   HotelModel get hotel;
   @JsonKey(ignore: true)
-  _$$HotelFetchedImplCopyWith<_$HotelFetchedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$HotelScreenStateFetchedImplCopyWith<_$HotelScreenStateFetchedImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$HotelFetchFailedImplCopyWith<$Res> {
-  factory _$$HotelFetchFailedImplCopyWith(_$HotelFetchFailedImpl value,
-          $Res Function(_$HotelFetchFailedImpl) then) =
-      __$$HotelFetchFailedImplCopyWithImpl<$Res>;
+abstract class _$$HotelScreenStateFetchFailedImplCopyWith<$Res> {
+  factory _$$HotelScreenStateFetchFailedImplCopyWith(
+          _$HotelScreenStateFetchFailedImpl value,
+          $Res Function(_$HotelScreenStateFetchFailedImpl) then) =
+      __$$HotelScreenStateFetchFailedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$HotelFetchFailedImplCopyWithImpl<$Res>
-    extends _$HotelScreenStateCopyWithImpl<$Res, _$HotelFetchFailedImpl>
-    implements _$$HotelFetchFailedImplCopyWith<$Res> {
-  __$$HotelFetchFailedImplCopyWithImpl(_$HotelFetchFailedImpl _value,
-      $Res Function(_$HotelFetchFailedImpl) _then)
+class __$$HotelScreenStateFetchFailedImplCopyWithImpl<$Res>
+    extends _$HotelScreenStateCopyWithImpl<$Res,
+        _$HotelScreenStateFetchFailedImpl>
+    implements _$$HotelScreenStateFetchFailedImplCopyWith<$Res> {
+  __$$HotelScreenStateFetchFailedImplCopyWithImpl(
+      _$HotelScreenStateFetchFailedImpl _value,
+      $Res Function(_$HotelScreenStateFetchFailedImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$HotelFetchFailedImpl implements _HotelFetchFailed {
-  const _$HotelFetchFailedImpl();
+class _$HotelScreenStateFetchFailedImpl implements HotelScreenStateFetchFailed {
+  const _$HotelScreenStateFetchFailedImpl();
 
   @override
   String toString() {
@@ -518,7 +530,8 @@ class _$HotelFetchFailedImpl implements _HotelFetchFailed {
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$HotelFetchFailedImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$HotelScreenStateFetchFailedImpl);
   }
 
   @override
@@ -527,7 +540,7 @@ class _$HotelFetchFailedImpl implements _HotelFetchFailed {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
+    required TResult Function() loading,
     required TResult Function(HotelModel hotel) hotelFetched,
     required TResult Function() hotelFetchFailed,
   }) {
@@ -537,7 +550,7 @@ class _$HotelFetchFailedImpl implements _HotelFetchFailed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
+    TResult? Function()? loading,
     TResult? Function(HotelModel hotel)? hotelFetched,
     TResult? Function()? hotelFetchFailed,
   }) {
@@ -547,7 +560,7 @@ class _$HotelFetchFailedImpl implements _HotelFetchFailed {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
+    TResult Function()? loading,
     TResult Function(HotelModel hotel)? hotelFetched,
     TResult Function()? hotelFetchFailed,
     required TResult orElse(),
@@ -561,9 +574,10 @@ class _$HotelFetchFailedImpl implements _HotelFetchFailed {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_HotelFetched value) hotelFetched,
-    required TResult Function(_HotelFetchFailed value) hotelFetchFailed,
+    required TResult Function(HotelScreenStateLoading value) loading,
+    required TResult Function(HotelScreenStateFetched value) hotelFetched,
+    required TResult Function(HotelScreenStateFetchFailed value)
+        hotelFetchFailed,
   }) {
     return hotelFetchFailed(this);
   }
@@ -571,9 +585,9 @@ class _$HotelFetchFailedImpl implements _HotelFetchFailed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_HotelFetched value)? hotelFetched,
-    TResult? Function(_HotelFetchFailed value)? hotelFetchFailed,
+    TResult? Function(HotelScreenStateLoading value)? loading,
+    TResult? Function(HotelScreenStateFetched value)? hotelFetched,
+    TResult? Function(HotelScreenStateFetchFailed value)? hotelFetchFailed,
   }) {
     return hotelFetchFailed?.call(this);
   }
@@ -581,9 +595,9 @@ class _$HotelFetchFailedImpl implements _HotelFetchFailed {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_HotelFetched value)? hotelFetched,
-    TResult Function(_HotelFetchFailed value)? hotelFetchFailed,
+    TResult Function(HotelScreenStateLoading value)? loading,
+    TResult Function(HotelScreenStateFetched value)? hotelFetched,
+    TResult Function(HotelScreenStateFetchFailed value)? hotelFetchFailed,
     required TResult orElse(),
   }) {
     if (hotelFetchFailed != null) {
@@ -593,6 +607,7 @@ class _$HotelFetchFailedImpl implements _HotelFetchFailed {
   }
 }
 
-abstract class _HotelFetchFailed implements HotelScreenState {
-  const factory _HotelFetchFailed() = _$HotelFetchFailedImpl;
+abstract class HotelScreenStateFetchFailed implements HotelScreenState {
+  const factory HotelScreenStateFetchFailed() =
+      _$HotelScreenStateFetchFailedImpl;
 }
