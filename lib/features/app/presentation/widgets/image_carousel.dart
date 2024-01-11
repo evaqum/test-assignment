@@ -185,7 +185,7 @@ class _CarouselImage extends StatelessWidget {
       },
       errorBuilder: (context, error, stackTrace) {
         return const Center(
-          child: Icon(Icons.wifi_off),
+          child: Icon(Icons.error_outline),
         );
       },
     );

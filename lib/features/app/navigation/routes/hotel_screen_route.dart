@@ -5,7 +5,9 @@ class HotelScreenRoute extends GoRouteData {
   const HotelScreenRoute();
 
   @override
-  Widget build(BuildContext context, GoRouterState state) {
-    return const HotelScreen();
+  Page<void> buildPage(BuildContext context, GoRouterState state) {
+    return const CupertinoPage(
+      child: HotelScreen(),
+    );
   }
 }

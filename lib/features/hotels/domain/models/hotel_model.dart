@@ -5,12 +5,14 @@ part 'hotel_model.freezed.dart';
 @freezed
 class HotelModel with _$HotelModel {
   const factory HotelModel({
-    required String id,
+    required int id,
     required String name,
     required String address,
     required List<String> imageUrls,
-    required String ratingString,
+    required int rating,
+    required String ratingName,
     required double minimalPrice,
+    required String priceFor,
     required String description,
     List<String>? features,
   }) = _HotelModel;
