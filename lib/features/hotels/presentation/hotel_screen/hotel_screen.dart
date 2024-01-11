@@ -62,6 +62,7 @@ class _HotelScreenBody extends StatelessWidget {
         }
 
         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          duration: Duration(days: 1),
           content: Text(
             'Не удалось получить информацию об отеле. Проверьте подключение к интернету.',
           ),
