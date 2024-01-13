@@ -163,55 +163,53 @@ class _FacilitiesItem extends StatelessWidget {
     return Material(
       type: MaterialType.transparency,
       textStyle: DefaultTextStyle.of(context).style,
-      child: Ink(
-        child: InkWell(
-          onTap: () {},
-          child: Padding(
-            padding: padding,
-            child: Row(
-              children: [
-                HFittedIcon.squareBox(
-                  dimension: iconSize,
-                  icon: Icon(
-                    data.icon,
-                    color: Colors.black,
-                  ),
+      child: InkWell(
+        onTap: () {},
+        child: Padding(
+          padding: padding,
+          child: Row(
+            children: [
+              HFittedIcon.squareBox(
+                dimension: iconSize,
+                icon: Icon(
+                  data.icon,
+                  color: Colors.black,
                 ),
-                Space.horizontal(iconSpacing),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        data.title,
-                        style: const TextStyle(
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.w500,
-                          color: Color(0xFF2C3035),
-                        ),
+              ),
+              Space.horizontal(iconSpacing),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      data.title,
+                      style: const TextStyle(
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xFF2C3035),
                       ),
-                      const Space.vertical(2.0),
-                      Text(
-                        data.description,
-                        style: const TextStyle(
-                          fontSize: 14.0,
-                          fontWeight: FontWeight.w500,
-                          color: Color(0xFF828696),
-                        ),
+                    ),
+                    const Space.vertical(2.0),
+                    Text(
+                      data.description,
+                      style: const TextStyle(
+                        fontSize: 14.0,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xFF828696),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-                const HFittedIcon.squareBox(
-                  dimension: 24.0,
-                  icon: Icon(
-                    HIcons.chevron_right24,
-                    color: Color(0xFF2C3035),
-                  ),
+              ),
+              const HFittedIcon.squareBox(
+                dimension: 24.0,
+                icon: Icon(
+                  HIcons.chevron_right24,
+                  color: Color(0xFF2C3035),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

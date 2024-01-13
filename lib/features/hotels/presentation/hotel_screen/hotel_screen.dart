@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../app/di/configure.dart';
 import '../../../app/navigation/routes.dart';
 import '../../../app/presentation/widgets/app_bar.dart';
+import '../../../app/presentation/widgets/bottom_button_sheet.dart';
 import '../../../app/presentation/widgets/progress_indicator.dart';
 import '../../../app/presentation/widgets/scaffold.dart';
 import '../../../app/presentation/widgets/space.dart';
@@ -55,7 +56,6 @@ class _HotelScreenBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<HotelScreenBloc, HotelScreenState>(
-      listenWhen: (previous, current) => previous != current,
       listener: (context, state) {
         if (state is! HotelScreenStateFetchFailed) {
           return;
@@ -86,30 +86,9 @@ class _GoToHotelRoomsButtonSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bottomPadding = MediaQuery.viewInsetsOf(context).bottom;
-    final padding = const EdgeInsets.symmetric(
-          horizontal: 16.0,
-          vertical: 12.0,
-        ) +
-        EdgeInsets.only(bottom: bottomPadding);
-
-    return DecoratedBox(
-      decoration: const BoxDecoration(
-        color: Colors.white,
-        border: Border(
-          top: BorderSide(
-            color: Color(0xFFE8E9EC),
-            width: 1.0,
-          ),
-        ),
-      ),
-      child: Padding(
-        padding: padding,
-        child: ElevatedButton(
-          onPressed: () => HotelRoomsScreenRoute.fromModel(hotel: hotel).push(context),
-          child: const Text('К выбору номера'),
-        ),
-      ),
+    return HBottomButtonSheet(
+      text: 'К выбору номера',
+      onPressed: () => HotelRoomsScreenRoute($extra: hotel).push(context),
     );
   }
 }

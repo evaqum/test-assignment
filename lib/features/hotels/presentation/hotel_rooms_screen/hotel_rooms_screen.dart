@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../app/di/configure.dart';
 import '../../../app/icons.dart';
+import '../../../app/navigation/routes.dart';
 import '../../../app/presentation/widgets/app_bar.dart';
 import '../../../app/presentation/widgets/button.dart';
 import '../../../app/presentation/widgets/card.dart';
@@ -13,49 +14,44 @@ import '../../../app/presentation/widgets/image_carousel.dart';
 import '../../../app/presentation/widgets/progress_indicator.dart';
 import '../../../app/presentation/widgets/scaffold.dart';
 import '../../../app/presentation/widgets/space.dart';
+import '../../domain/models/hotel_model.dart';
 import '../../domain/models/hotel_room_model.dart';
 import '../widgets/price_for.dart';
 import 'bloc/hotel_rooms_screen_bloc.dart';
 
 class HotelRoomsScreen extends StatelessWidget {
-  final String hotelName;
-  final int hotelId;
+  final HotelModel hotel;
 
   const HotelRoomsScreen({
     super.key,
-    required this.hotelName,
-    required this.hotelId,
+    required this.hotel,
   });
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => HotelRoomsScreenBloc(
-        hotelId: hotelId,
+        hotel: hotel,
         hotelsRepository: get(),
       ) //
         ..add(const HotelRoomsScreenEvent.roomsFetchRequested()),
-      child: _HotelRoomsScreenView(
-        hotelName: hotelName,
-      ),
+      child: const _HotelRoomsScreenView(),
     );
   }
 }
 
 class _HotelRoomsScreenView extends StatelessWidget {
-  final String hotelName;
-
-  const _HotelRoomsScreenView({
-    required this.hotelName,
-  });
+  const _HotelRoomsScreenView();
 
   @override
   Widget build(BuildContext context) {
+    final hotel = context.read<HotelRoomsScreenBloc>().hotel;
+
     return HScaffold(
       body: CustomScrollView(
         slivers: [
           HSliverAppBar(
-            title: Text(hotelName),
+            title: Text(hotel.name),
           ),
           const _HotelRoomsScreenBody(),
         ],
@@ -70,7 +66,6 @@ class _HotelRoomsScreenBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<HotelRoomsScreenBloc, HotelRoomsScreenState>(
-      listenWhen: (previous, current) => previous != current,
       listener: (context, state) {
         if (state is! HotelRoomsScreenStateFetchFailed) {
           return;
@@ -125,6 +120,8 @@ class _HotelRoomCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    late final hotel = context.read<HotelRoomsScreenBloc>().hotel;
+
     return HCard(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -183,7 +180,10 @@ class _HotelRoomCard extends StatelessWidget {
           const Space.vertical(16.0),
           HButton(
             text: 'Выбрать номер',
-            onPressed: () {},
+            onPressed: () => RoomBookScreenRoute($extra: (
+              room: room,
+              hotel: hotel,
+            )).push(context),
           ),
         ],
       ),

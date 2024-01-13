@@ -11,8 +11,9 @@ abstract class HotelAppTheme {
   static const primaryBlue = Color(0xFF0D72FF);
 
   static final theme = ThemeData(
-    platform: TargetPlatform.iOS,
+    // platform: TargetPlatform.iOS,
     fontFamily: 'SF Pro Display',
+    colorSchemeSeed: primaryBlue,
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         backgroundColor: const Color(0xFF0D72FF),
@@ -38,6 +39,11 @@ abstract class HotelAppTheme {
     ),
     scaffoldBackgroundColor: const Color(0xFFF6F6F9),
     textTheme: const TextTheme(
+      bodyLarge: TextStyle(
+        fontSize: 16.0,
+        color: Color(0xFF14142B),
+        fontWeight: FontWeight.w400,
+      ),
       titleLarge: TextStyle(
         fontFamily: 'SF Pro Display',
         fontSize: 18.0,
@@ -61,6 +67,26 @@ abstract class HotelAppTheme {
     ),
     snackBarTheme: const SnackBarThemeData(
       behavior: SnackBarBehavior.floating,
+    ),
+    inputDecorationTheme: const InputDecorationTheme(
+      contentPadding: EdgeInsets.symmetric(
+        horizontal: 16.0,
+        vertical: 10.0,
+      ),
+      filled: true,
+      fillColor: Color(0xFFF6F6F9),
+      border: UnderlineInputBorder(
+        borderSide: BorderSide.none,
+        borderRadius: BorderRadius.all(Radius.circular(10.0)),
+      ),
+      labelStyle: TextStyle(
+        fontSize: 17.0,
+        fontFamily: 'SF Pro Display',
+        color: Color(0xFFA9ABB7),
+      ),
+      floatingLabelStyle: TextStyle(
+        color: Color(0xFFA9ABB7),
+      ),
     ),
   );
 }

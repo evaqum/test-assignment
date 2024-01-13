@@ -1,25 +1,16 @@
 part of '../routes.dart';
 
-@TypedGoRoute<HotelRoomsScreenRoute>(path: '/hotel/:id')
+@TypedGoRoute<HotelRoomsScreenRoute>(path: '/hotel/rooms')
 class HotelRoomsScreenRoute extends GoRouteData {
-  final int id;
-  final String hotelName;
+  final HotelModel $extra;
 
-  const HotelRoomsScreenRoute({
-    required this.id,
-    required this.hotelName,
-  });
-
-  HotelRoomsScreenRoute.fromModel({required HotelModel hotel})
-      : id = hotel.id,
-        hotelName = hotel.name;
+  const HotelRoomsScreenRoute({required this.$extra});
 
   @override
   Page<void> buildPage(BuildContext context, GoRouterState state) {
     return CupertinoPage(
       child: HotelRoomsScreen(
-        hotelId: id,
-        hotelName: hotelName,
+        hotel: $extra,
       ),
     );
   }

@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:logging/logging.dart';
 
 void configureLogger() {
+  Logger.root.level = Level.ALL;
   Logger.root.onRecord.listen((record) {
     final message = StringBuffer();
 
