@@ -21,6 +21,7 @@ class HField extends StatefulWidget {
   final List<TextInputFormatter>? inputFormatters;
   final HFieldType type;
   final TextInputAction? textInputAction;
+  final String? intialValue;
 
   const HField({
     super.key,
@@ -32,6 +33,7 @@ class HField extends StatefulWidget {
     this.keyboardType,
     this.inputFormatters,
     this.textInputAction,
+    this.intialValue,
   });
 
   @override
@@ -43,12 +45,14 @@ class _HFieldState extends State<HField> {
   late final TextEditingController _textEditingController;
   late bool _hasFocus;
   bool _interactedWith = false;
-
   @override
   void initState() {
     super.initState();
+
     _focusNode = FocusNode();
-    _textEditingController = TextEditingController(text: widget.inputValue.value);
+    _textEditingController = TextEditingController(
+      text: widget.intialValue ?? widget.inputValue.value,
+    );
     _hasFocus = _focusNode.hasFocus;
 
     _focusNode.addListener(() {
@@ -62,6 +66,7 @@ class _HFieldState extends State<HField> {
   void dispose() {
     _focusNode.dispose();
     _textEditingController.dispose();
+
     super.dispose();
   }
 

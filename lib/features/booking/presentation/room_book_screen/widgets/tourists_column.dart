@@ -24,7 +24,7 @@ class RoomBookTouristsColumn extends StatelessWidget {
             for (var i = 0; i < touristCount; i++) ...[
               RoomBookTouristFormCard(
                 touristIndex: i,
-                key: ValueKey(i),
+                key: ValueKey('tourist_$i'),
               ),
               if (i < touristCount - 1) const Space.vertical(8.0),
             ],

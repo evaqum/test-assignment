@@ -6,13 +6,22 @@ import '../../../../app/presentation/widgets/field.dart';
 import '../../../../app/presentation/widgets/space.dart';
 import '../bloc/room_book_form/room_book_form_bloc.dart';
 
-class RoomBookClientInfoForm extends StatelessWidget {
+class RoomBookClientInfoForm extends StatefulWidget {
   const RoomBookClientInfoForm({
     super.key,
   });
 
   @override
+  State<RoomBookClientInfoForm> createState() => _RoomBookClientInfoFormState();
+}
+
+class _RoomBookClientInfoFormState extends State<RoomBookClientInfoForm> with AutomaticKeepAliveClientMixin {
+  @override
+  bool get wantKeepAlive => true;
+
+  @override
   Widget build(BuildContext context) {
+    super.build(context);
     final bloc = context.read<RoomBookFormBloc>();
 
     return BlocBuilder<RoomBookFormBloc, RoomBookFormState>(
@@ -30,6 +39,7 @@ class RoomBookClientInfoForm extends StatelessWidget {
               ),
               const Space.vertical(20.0),
               HField(
+                key: const ValueKey('phone_input'),
                 label: 'Номер телефона',
                 errorBehavior: state.triedSubmitting ? HFieldErrorBehavior.showAll : HFieldErrorBehavior.showOnLostFocus,
                 inputValue: state.clientPhone,
@@ -42,6 +52,7 @@ class RoomBookClientInfoForm extends StatelessWidget {
               ),
               const Space.vertical(8.0),
               HField(
+                key: const ValueKey('email_input'),
                 label: 'Почта',
                 errorBehavior: state.triedSubmitting ? HFieldErrorBehavior.showAll : HFieldErrorBehavior.showOnLostFocus,
                 inputValue: state.clientEmail,
